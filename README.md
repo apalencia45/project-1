@@ -11,6 +11,20 @@
 #define SensTemp 35
 #define Btin  36
 
+//definición pines display 
+#define dA
+#define dB
+#define dC
+#define dD
+#define dE
+#define dF 16
+#define dG 17
+#define dP
+
+#define display0 15 
+#define display1 2
+#define display2 4
+
 // definición de salidas (leds) 
 #define ledRed 12
 #define ledYel 27

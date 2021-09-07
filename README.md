@@ -36,7 +36,18 @@ void leds();
 //*********************************
 //Variables globales 
 //*********************************
-
+int adctemp =0; 
+int botonestado = 0;
+float ValTemp = 0.0; 
+//*********************************
+//ISR
+//*********************************
+void IRAM_ATTR ISRb(){
+  botonestado =1; 
+}
+//*********************************
+//Configuración 
+//*********************************
 
 void loop() {
   // put your main code here, to run repeatedly:

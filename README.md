@@ -39,6 +39,7 @@ void leds();
 int adctemp =0; 
 int botonestado = 0;
 float ValTemp = 0.0; 
+float voltaje = 0.0,
 //*********************************
 //ISR
 //*********************************
@@ -60,6 +61,19 @@ void setuo(){
   configuraciónpwm();
   attachInterrupt(Btin,ISRb, HIGH); // ?? 
 }
+//*********************************
+//Configuración del Loop 
+//*********************************
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (botonestado==1){
+    EMPadc();
+    botonestado =0;
+  }  
+}
+//*********************************
+//Funciones 
+//*********************************
+void EMPadc(void){
+  adctemp =analogReadMilliVolts(SensTemp);
+  adcfilt= 
 }

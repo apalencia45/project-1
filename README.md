@@ -53,7 +53,12 @@ void leds();
 int adctemp =0; 
 int botonestado = 0;
 float ValTemp = 0.0; 
-float voltaje = 0.0,
+float voltaje = 0.0;
+
+// adaffruit
+int count = 0;
+long LastTime; 
+int sampleTime = 3000;
 //*********************************
 //ISR
 //*********************************
@@ -83,6 +88,26 @@ void loop() {
     EMPadc();
     botonestado =0;
   }  
+
+
+
+
+
+
+
+  //Adafruit
+  while(! Serial);
+
+  Serial.print("Connecting to Adafruit IO");
+  io.connect();
+
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println(io.statusText());
 }
 //*********************************
 //Funciones 

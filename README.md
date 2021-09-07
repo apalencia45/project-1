@@ -48,7 +48,18 @@ void IRAM_ATTR ISRb(){
 //*********************************
 //Configuración 
 //*********************************
+void setuo(){
+  Serial.begin(115200);
 
+  pinMode(Btin,INPUT_PULLUP);
+
+  pinMode(ledRed,OUTPUT);
+  pinMode(ledYel,OUTPUT);
+  pinMode(ledGre,OUTPUT);
+
+  configuraciónpwm();
+  attachInterrupt(Btin,ISRb, HIGH); // ?? 
+}
 void loop() {
   // put your main code here, to run repeatedly:
 }

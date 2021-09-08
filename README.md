@@ -120,7 +120,6 @@ void setup(){
   Serial.println(io.statusText()); 
 }
 
-
 //*********************************
 //Configuración del Loop 
 //*********************************
@@ -128,7 +127,13 @@ void loop() {
   if (botonestado==1){
     EMPadc();
     botonestado =0;
+  Serial.print("adcRaw = ");
+  Serial.print(ValTemp);
+  Serial.print(" , ");
+  Serial.print("TEMPERATURA = ");
+  Serial.println(adcfilt);
 
+//Adafruit 
     io.run();
 
   // save count to the 'counter' feed on Adafruit IO
@@ -136,23 +141,19 @@ void loop() {
   Serial.println(ValTemp);
   termometro->save(ValTemp);
 
+  //Cálculos para separar números de temperatura
+  entero = adcfilt * 10;    
+  decenas = entero / 100;          
+  entero = entero - (decenas * 100); 
+  unidades = entero / 10;          
+  entero = entero - (unidades * 10); 
+  decimal = entero;       
+
   }  
 
-
-  //Adafruit
-  while(! Serial);
-
-  Serial.print("Connecting to Adafruit IO");
-  io.connect();
-
-  while(io.status() < AIO_CONNECTED) {
-    Serial.print(".");
-    delay(500);
-  }
-
-  Serial.println();
-  Serial.println(io.statusText());
 }
+// conf temperatura 
+  
 //*********************************
 //Funciones 
 //*********************************

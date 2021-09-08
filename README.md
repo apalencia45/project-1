@@ -11,6 +11,10 @@
 //*********************************
 #include <Arduino.h>
 #include "esp_adc_cal.h"
+#include "display7seg.h"
+#include "config.h"
+
+AdafruitIO_Feed *termometro = io.feed("temp");
 
 //*********************************
 //Definición de pines 
@@ -52,21 +56,29 @@
 //*********************************
 //Configuración de funciones
 //*********************************
-void configuraciónpwm();
-void leds(); 
 
+void leds(); 
+void ISRbin(void);
 //*********************************
 //Variables globales 
 //*********************************
-int adctemp =0; 
+//int adctemp =0; 
 int botonestado = 0;
 float ValTemp = 0.0; 
-float voltaje = 0.0;
+//float voltaje = 0.0;
+double adcfilt = 0; //ema. media móvil exponencial
+double alpha = 0.09; 
+long lastTime; 
+int sampletime =5 ;
 
-// adaffruit
-int count = 0;
-long LastTime; 
-int sampleTime = 3000;
+//vairables para separar valor de temperatura
+int decenas=0;
+int unidades=0;
+int decimal=0;
+int entero=0;
+
+//display 7 segmentos 
+uint8_t pinA, pinB, pinC, pinD, pinE, pinF, pinG, pindp;
 //*********************************
 //ISR
 //*********************************

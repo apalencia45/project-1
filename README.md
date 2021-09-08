@@ -142,6 +142,14 @@ void loop() {
   if (botonestado==1){
     EMPadc();
     botonestado =0;
+
+    io.run();
+
+  // save count to the 'counter' feed on Adafruit IO
+  Serial.print("sending -> ");
+  Serial.println(ValTemp);
+  termometro->save(ValTemp);
+
   }  
 
 

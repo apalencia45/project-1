@@ -151,8 +151,38 @@ void loop() {
 
   }  
 
+//conf temperatura
+ValTemp= analogReadMilliVolts(SensTemp)/10.0 ; //corrección
+adcfilt=(alpha*ValTemp)+((1-alpha)*adcfilt); //filtro ema
+
+//MOSTRAR NÚMEROS EN DISPLAY
+  digitalWrite(display0, HIGH);
+  digitalWrite(display1, LOW);
+  digitalWrite(display2, LOW);
+  desplegarSeg(decenas);  
+  puntodec(0);
+  lastTime=millis();
+  while(millis()  <lastTime + sampletime);
+
+  digitalWrite(display0, LOW);
+  digitalWrite(display1, HIGH);
+  digitalWrite(display2, LOW);
+  desplegarSeg(unidades);  
+  puntodec(1);
+  lastTime=millis();
+  while(millis()  <lastTime + sampletime);
+
+  digitalWrite(display0, LOW);
+  digitalWrite(display1, LOW);
+  digitalWrite(display2, HIGH);
+  desplegarSeg(decimal);  
+  puntodec(0);
+  lastTime=millis();
+  while(millis()  <lastTime + sampletime);
+
 }
-// conf temperatura 
+}
+
   
 //*********************************
 //Funciones 

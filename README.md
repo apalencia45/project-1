@@ -196,20 +196,32 @@ adcfilt=(alpha*ValTemp)+((1-alpha)*adcfilt); //filtro ema
 }*/ 
 
 void configuracionpwm(void){
-  void leds(void){
-    if (ValTemp < 12.0){
+  ledcSetup(pwmServo, pwmFreq, res); 
+  ledcAttachPin(servo1, pwmServo); 
+  
+  ledcSetup(pwmledRed, pwmFreqled, res); 
+  ledcSetup(pwmledGre, pwmFreqled, res); 
+  ledcSetup(pwmledYel, pwmFreqled, res); 
+  
+  ledcAttachPin(ledRed, pwmledRed); 
+  ledcAttachPin(ledGre, pwmledGre); 
+  ledcAttachPin(ledYel, pwmledYel); 
+}
+
+void leds(void){
+    if (adcfilt < 12.0){
       ledcWrite(pwmServo, 10);
       ledcWrite(pwmledRed, 0); //apagada
       ledcWrite(pwmledYel,0); //apagada
       ledcWrite(pwmledGre,255); //encendida
     }
-    if(ValTemp >=12.5){
+    if(adcfilt >=12.5){
       ledcWrite(pwmServo, 20);
       ledcWrite(pwmledRed, 0);
       ledcWrite (pwmledYel, 255);
       ledcWrite(pwmledGre,0);
     }
-    if (ValTemp >13){
+    if (adcfilt >13){
       ledcWrite(pwmServo,30);
       ledcWrite(pwmledRed,255);
       ledcWrite(pwmledYel,0);

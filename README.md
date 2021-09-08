@@ -52,6 +52,7 @@ AdafruitIO_Feed *termometro = io.feed("Proyecto 1");
 #define pwmledYel 2
 #define pwmledGre  3
 #define pwmFreq 50  //freq en Hz 
+#define pwmFreqled 5000 //frecuencia de los leds
 #define res 8
 
 //*********************************
@@ -81,7 +82,7 @@ void IRAM_ATTR ISRb(){
 //*********************************
 //Configuración 
 //*********************************
-void setuo(){
+void setup(){
   Serial.begin(115200);
 
   pinMode(Btin,INPUT_PULLUP);
@@ -90,8 +91,30 @@ void setuo(){
   pinMode(ledYel,OUTPUT);
   pinMode(ledGre,OUTPUT);
 
+  lastTime= millis();
   configuraciónpwm();
-  attachInterrupt(Btin,ISRb, HIGH); // ?? 
+  attachInterrupt(Btin,ISRb, HIGH); 
+}
+//*********************************
+//Configuración del PWM del servo 
+//*********************************
+void configuracionSLPWM(void)
+{
+  //  Configurar el módulo PWMservo 
+  ledcSetup(pwmServo, pwmFreq, res); //Unimos las variables determinadas arriba
+
+  
+  ledcAttachPin(servo1, pwmServo); //selección del pin 
+
+// configurar modulo pwm leds 
+  ledcSetup(pwmledRed, pwmFreqled, res); //Unimos las variables determinadas arriba
+  ledcSetup(pwmledYel, pwmFreqled, res); 
+  ledcSetup(pwmledGre, pwmFreqled, res); 
+
+ 
+  ledcAttachPin(ledRed, pwmledRed); //seleccion del pin 
+  ledcAttachPin(ledGre, pwmledGre; 
+  ledcAttachPin(ledYel, pwmledYel); 
 }
 //*********************************
 //Configuración del Loop 
@@ -101,11 +124,6 @@ void loop() {
     EMPadc();
     botonestado =0;
   }  
-
-
-
-
-
 
 
   //Adafruit

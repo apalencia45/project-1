@@ -94,6 +94,25 @@ void setup(){
   lastTime= millis();
   configuraciónpwm();
   attachInterrupt(Btin,ISRb, HIGH); 
+
+  // wait for serial monitor to open
+  while(! Serial);
+
+  Serial.print("Connecting to Adafruit IO");
+
+  // connect to io.adafruit.com
+  io.connect();
+
+  // wait for a connection
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  // we are connected
+  Serial.println();
+  Serial.println(io.statusText()); 
+}
 }
 //*********************************
 //Configuración del PWM del servo 

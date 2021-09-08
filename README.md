@@ -1,3 +1,15 @@
+//Adafruit.IO
+#define IO_USERNAME  "EsBatz"
+#define IO_KEY       "aio_lWcG42G3XvoZmC8IRW9tatg3uYtU"
+
+//Parte de WIFI
+#define WIFI_SSID "Batz" 
+#define WIFI_PASS "141994Jo"
+
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+AdafruitIO_Feed *termometro = io.feed("D2_Proyecto1");
+
+
 
 //*********************************
 //librerías

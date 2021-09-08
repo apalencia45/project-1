@@ -113,28 +113,8 @@ void setup(){
   Serial.println();
   Serial.println(io.statusText()); 
 }
-}
-//*********************************
-//Configuración del PWM del servo 
-//*********************************
-void configuracionSLPWM(void)
-{
-  //  Configurar el módulo PWMservo 
-  ledcSetup(pwmServo, pwmFreq, res); //Unimos las variables determinadas arriba
 
-  
-  ledcAttachPin(servo1, pwmServo); //selección del pin 
 
-// configurar modulo pwm leds 
-  ledcSetup(pwmledRed, pwmFreqled, res); //Unimos las variables determinadas arriba
-  ledcSetup(pwmledYel, pwmFreqled, res); 
-  ledcSetup(pwmledGre, pwmFreqled, res); 
-
- 
-  ledcAttachPin(ledRed, pwmledRed); //seleccion del pin 
-  ledcAttachPin(ledGre, pwmledGre; 
-  ledcAttachPin(ledYel, pwmledYel); 
-}
 //*********************************
 //Configuración del Loop 
 //*********************************

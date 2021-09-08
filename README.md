@@ -187,25 +187,29 @@ adcfilt=(alpha*ValTemp)+((1-alpha)*adcfilt); //filtro ema
 //*********************************
 //Funciones 
 //*********************************
-void EMPadc(void){
+//FILTRO 
+/*void EMPadc(void){
   adctemp =analogReadMilliVolts(SensTemp);
-  adcfilt= 
-}
+  adcfilt= (alpha *adctemp)+ ((1.0-alpha)* adcfilt);
+  ValTemp = (adcfilt/10.0);
+  Serial.println(ValTemp);
+}*/ 
+
 void configuracionpwm(void){
   void leds(void){
-    if (ValTemp < 37.0){
+    if (ValTemp < 12.0){
       ledcWrite(pwmServo, 10);
       ledcWrite(pwmledRed, 0); //apagada
       ledcWrite(pwmledYel,0); //apagada
       ledcWrite(pwmledGre,255); //encendida
     }
-    if(ValTemp >=37.0){
+    if(ValTemp >=12.5){
       ledcWrite(pwmServo, 20);
       ledcWrite(pwmledRed, 0);
       ledcWrite (pwmledYel, 255);
       ledcWrite(pwmledGre,0);
     }
-    if (ValTemp >38){
+    if (ValTemp >13){
       ledcWrite(pwmServo,30);
       ledcWrite(pwmledRed,255);
       ledcWrite(pwmledYel,0);

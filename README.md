@@ -311,3 +311,18 @@ void desplegarSeg(uint8_t digito)
         break;
     }
 }
+//*********************
+//función punto decimal 
+//*********************
+void puntodec(boolean punto)
+{
+    if (punto == 1)
+    {
+        digitalWrite(pindp, HIGH);
+    }
+
+    else
+    {
+        digitalWrite(pindp, LOW);
+    }
+}

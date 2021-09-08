@@ -168,3 +168,35 @@ void configuracionpwm(void){
       ledcWrite(pwmledGre,0)
     }
   }
+  //*********************************
+//Funcion  display de 7 segmentos
+//*********************************
+void configurarDisplay(uint8_t A, uint8_t B, uint8_t C, uint8_t D, uint8_t E, uint8_t F, uint8_t G, uint8_t dp)
+{
+    pinA = A;
+    pinB = B;
+    pinC = C;
+    pinD = D;
+    pinE = E;
+    pinF = F;
+    pinG = G;
+    pindp = dp;
+
+    pinMode(pinA, OUTPUT);
+    pinMode(pinB, OUTPUT);
+    pinMode(pinC, OUTPUT);
+    pinMode(pinD, OUTPUT);
+    pinMode(pinE, OUTPUT);
+    pinMode(pinF, OUTPUT);
+    pinMode(pinG, OUTPUT);
+    pinMode(pindp, OUTPUT);
+
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, LOW);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, LOW);
+    digitalWrite(pindp, LOW);
+}

@@ -268,53 +268,53 @@ void desplegarSeg(uint8_t digito)
     switch (digito)
     {
     case 0:
-        digitalWrite(pinA, HIGH);
-        digitalWrite(pinB, HIGH);
-        digitalWrite(pinC, HIGH);
-        digitalWrite(pinD, HIGH);
-        digitalWrite(pinE, HIGH);
-        digitalWrite(pinF, HIGH);
-        digitalWrite(pinG, LOW);
+        digitalWrite(dA, HIGH);
+        digitalWrite(dB, HIGH);
+        digitalWrite(dC, HIGH);
+        digitalWrite(dD, HIGH);
+        digitalWrite(dE, HIGH);
+        digitalWrite(dF, HIGH);
+        digitalWrite(dG, LOW);
         break;
 
     case 1:
-        digitalWrite(pinA, LOW);
-        digitalWrite(pinB, HIGH);
-        digitalWrite(pinC, HIGH);
-        digitalWrite(pinD, LOW);
-        digitalWrite(pinE, LOW);
-        digitalWrite(pinF, LOW);
-        digitalWrite(pinG, LOW);
+        digitalWrite(dA, LOW);
+        digitalWrite(dB, HIGH);
+        digitalWrite(dC, HIGH);
+        digitalWrite(dD, LOW);
+        digitalWrite(dE, LOW);
+        digitalWrite(dF, LOW);
+        digitalWrite(dG, LOW);
         break;
 
     case 2:
-        digitalWrite(pinA, HIGH);
-        digitalWrite(pinB, HIGH);
-        digitalWrite(pinC, LOW);
-        digitalWrite(pinD, HIGH);
-        digitalWrite(pinE, HIGH);
-        digitalWrite(pinF, LOW);
-        digitalWrite(pinG, HIGH);
+        digitalWrite(dA, HIGH);
+        digitalWrite(dB, HIGH);
+        digitalWrite(dC, LOW);
+        digitalWrite(dD, HIGH);
+        digitalWrite(dE, HIGH);
+        digitalWrite(dF, LOW);
+        digitalWrite(dG, HIGH);
         break;
 
     case 3:
-        digitalWrite(pinA, HIGH);
-        digitalWrite(pinB, HIGH);
-        digitalWrite(pinC, HIGH);
-        digitalWrite(pinD, HIGH);
-        digitalWrite(pinE, LOW);
-        digitalWrite(pinF, LOW);
-        digitalWrite(pinG, HIGH);
+        digitalWrite(dA, HIGH);
+        digitalWrite(dB, HIGH);
+        digitalWrite(dC, HIGH);
+        digitalWrite(dD, HIGH);
+        digitalWrite(dE, LOW);
+        digitalWrite(dF, LOW);
+        digitalWrite(dG, HIGH);
         break;
 
     case 4:
-        digitalWrite(pinA, LOW);
-        digitalWrite(pinB, HIGH);
-        digitalWrite(pinC, HIGH);
-        digitalWrite(pinD, LOW);
-        digitalWrite(pinE, LOW);
-        digitalWrite(pinF, HIGH);
-        digitalWrite(pinG, HIGH);
+        digitalWrite(dA, LOW);
+        digitalWrite(dB, HIGH);
+        digitalWrite(dC, HIGH);
+        digitalWrite(dD, LOW);
+        digitalWrite(dE, LOW);
+        digitalWrite(dF, HIGH);
+        digitalWrite(dG, HIGH);
         break;
 
     case 5:
@@ -328,43 +328,43 @@ void desplegarSeg(uint8_t digito)
         break;
 
     case 6:
-        digitalWrite(pinA, HIGH);
-        digitalWrite(pinB, LOW);
-        digitalWrite(pinC, HIGH);
-        digitalWrite(pinD, HIGH);
-        digitalWrite(pinE, HIGH);
-        digitalWrite(pinF, HIGH);
-        digitalWrite(pinG, HIGH);
+        digitalWrite(dA, HIGH);
+        digitalWrite(dB, LOW);
+        digitalWrite(dC, HIGH);
+        digitalWrite(dD, HIGH);
+        digitalWrite(dE, HIGH);
+        digitalWrite(dF, HIGH);
+        digitalWrite(dG, HIGH);
         break;
 
     case 7:
-        digitalWrite(pinA, HIGH);
-        digitalWrite(pinB, HIGH);
-        digitalWrite(pinC, HIGH);
-        digitalWrite(pinD, LOW);
-        digitalWrite(pinE, LOW);
-        digitalWrite(pinF, LOW);
-        digitalWrite(pinG, LOW);
+        digitalWrite(dA, HIGH);
+        digitalWrite(dB, HIGH);
+        digitalWrite(dC, HIGH);
+        digitalWrite(dD, LOW);
+        digitalWrite(dE, LOW);
+        digitalWrite(dF, LOW);
+        digitalWrite(dG, LOW);
         break;
 
     case 8:
-        digitalWrite(pinA, HIGH);
-        digitalWrite(pinB, HIGH);
-        digitalWrite(pinC, HIGH);
-        digitalWrite(pinD, HIGH);
-        digitalWrite(pinE, HIGH);
-        digitalWrite(pinF, HIGH);
-        digitalWrite(pinG, HIGH);
+        digitalWrite(dA, HIGH);
+        digitalWrite(dB, HIGH);
+        digitalWrite(dC, HIGH);
+        digitalWrite(dD, HIGH);
+        digitalWrite(dE, HIGH);
+        digitalWrite(dF, HIGH);
+        digitalWrite(dG, HIGH);
         break;
 
     case 9:
-        digitalWrite(pinA, HIGH);
-        digitalWrite(pinB, HIGH);
-        digitalWrite(pinC, HIGH);
-        digitalWrite(pinD, HIGH);
-        digitalWrite(pinE, LOW);
-        digitalWrite(pinF, HIGH);
-        digitalWrite(pinG, HIGH);
+        digitalWrite(dA, HIGH);
+        digitalWrite(dB, HIGH);
+        digitalWrite(dC, HIGH);
+        digitalWrite(dD, HIGH);
+        digitalWrite(dE, LOW);
+        digitalWrite(dF, HIGH);
+        digitalWrite(dG, HIGH);
         break;
 
     default:

@@ -1,13 +1,14 @@
 //Adafruit.IO
-#define IO_USERNAME  "EsBatz"
-#define IO_KEY       "aio_lWcG42G3XvoZmC8IRW9tatg3uYtU"
+#define IO_USERNAME  "apalencia"
+#define IO_KEY       "aio_kqFQ876a69JM01EsJ3DbNPuDoz7O"
+
 
 //Parte de WIFI
-#define WIFI_SSID "Batz" 
-#define WIFI_PASS "141994Jo"
+#define WIFI_SSID "andrea2" 
+#define WIFI_PASS "febrero2"
 
 AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
-AdafruitIO_Feed *termometro = io.feed("D2_Proyecto1");
+AdafruitIO_Feed *termometro = io.feed("Proyecto 1");
 
 
 

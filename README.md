@@ -129,3 +129,24 @@ void EMPadc(void){
   adctemp =analogReadMilliVolts(SensTemp);
   adcfilt= 
 }
+void configuracionpwm(void){
+  void leds(void){
+    if (ValTemp < 37.0){
+      ledcWrite(pwmServo, 10);
+      ledcWrite(pwmledRed, 0); //apagada
+      ledcWrite(pwmledYel,0); //apagada
+      ledcWrite(pwmledGre,255); //encendida
+    }
+    if(ValTemp >=37.0){
+      ledcWrite(pwmServo, 20);
+      ledcWrite(pwmledRed, 0);
+      ledcWrite (pwmledYel, 255);
+      ledcWrite(pwmledGre,0);
+    }
+    if (ValTemp >38){
+      ledcWrite(pwmServo,30);
+      ledcWrite(pwmledRed,255);
+      ledcWrite(pwmledYel,0);
+      ledcWrite(pwmledGre,0)
+    }
+  }

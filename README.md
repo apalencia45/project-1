@@ -20,7 +20,7 @@ AdafruitIO_Feed *termometro = io.feed("temp");
 //Definición de pines 
 //*********************************
 #define SensTemp 15
-#define Btin  14
+#define Btin  13
 
 //definición pines display 
 #define dA 3
@@ -242,23 +242,23 @@ void configurarDisplay(uint8_t A, uint8_t B, uint8_t C, uint8_t D, uint8_t E, ui
     pinG = G;
     pindp = dp;
 
-    pinMode(pinA, OUTPUT);
-    pinMode(pinB, OUTPUT);
-    pinMode(pinC, OUTPUT);
-    pinMode(pinD, OUTPUT);
-    pinMode(pinE, OUTPUT);
-    pinMode(pinF, OUTPUT);
-    pinMode(pinG, OUTPUT);
-    pinMode(pindp, OUTPUT);
+    pinMode(dA, OUTPUT);
+    pinMode(dB, OUTPUT);
+    pinMode(dC, OUTPUT);
+    pinMode(dD, OUTPUT);
+    pinMode(dE, OUTPUT);
+    pinMode(dF, OUTPUT);
+    pinMode(dG, OUTPUT);
+    pinMode(dP, OUTPUT);
 
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);
-    digitalWrite(pindp, LOW);
+    digitalWrite(dA, LOW);
+    digitalWrite(dB, LOW);
+    digitalWrite(dC, LOW);
+    digitalWrite(dD, LOW);
+    digitalWrite(dE, LOW);
+    digitalWrite(dF, LOW);
+    digitalWrite(dG, LOW);
+    digitalWrite(dP, LOW);
 }
 //*********************************
 //desplegar el digito en el display de 7 segmentos

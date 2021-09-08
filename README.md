@@ -21,30 +21,30 @@ AdafruitIO_Feed *termometro = io.feed("Proyecto 1");
 //*********************************
 //Definición de pines 
 //*********************************
-#define SensTemp 35
-#define Btin  36
+#define SensTemp 15
+#define Btin  14
 
 //definición pines display 
-#define dA
-#define dB
-#define dC
-#define dD
-#define dE
-#define dF 16
-#define dG 17
-#define dP
+#define dA 3
+#define dB 1
+#define dC 23
+#define dD 35
+#define dE 34
+#define dF 36
+#define dG 39
+#define dP 22
 
-#define display0 15 
-#define display1 2
-#define display2 4
+#define display0 32
+#define display1 12
+#define display2 25
 
 // definición de salidas (leds) 
-#define ledRed 12
-#define ledYel 27
-#define ledGre 25
+#define ledRed 4
+#define ledYel 17
+#define ledGre 18
 
 //definición del servo PWM
-#define servo1  23
+#define servo1  26
 
 // definición de variables configuración pwm 
 #define pwmServo 0

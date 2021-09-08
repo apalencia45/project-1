@@ -378,11 +378,11 @@ void puntodec(boolean punto)
 {
     if (punto == 1)
     {
-        digitalWrite(pindp, HIGH);
+        digitalWrite(dP, HIGH);
     }
 
     else
     {
-        digitalWrite(pindp, LOW);
+        digitalWrite(dP, LOW);
     }
 }

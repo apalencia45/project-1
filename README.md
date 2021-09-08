@@ -1,16 +1,10 @@
-//Adafruit.IO
-#define IO_USERNAME  "apalencia"
-#define IO_KEY       "aio_kqFQ876a69JM01EsJ3DbNPuDoz7O"
-
-
-//Parte de WIFI
-#define WIFI_SSID "andrea2" 
-#define WIFI_PASS "febrero2"
-
-AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
-AdafruitIO_Feed *termometro = io.feed("Proyecto 1");
-
-
+//************************************
+//UNIVERSIDAD DEL VALLE 
+//BE3015
+//ANDREA PALENCIA 
+//19023
+//PROYECTO 1
+//************************************
 
 //*********************************
 //librerías
